@@ -1,10 +1,10 @@
 body{
-    background-image: url(https://img.bomboradyo.com/davao/2024/09/TORRE.jpg);
+    background-image: url(TORRE.jpg);
     background-position: center;
     color: #fff;
 }
 .container{
-    background-image: url(https://m.gjcdn.net/fireside-post-image/900/20362567-gdyfejcj-v4.webp);
+    background-image: url(cardo);
     background-size:  cover;
     background-position: center;
     border-radius: 10px;
