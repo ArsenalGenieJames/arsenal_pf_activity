@@ -1,0 +1,20 @@
+body{
+    background-image: url(https://img.bomboradyo.com/davao/2024/09/TORRE.jpg);
+    background-position: center;
+    color: #fff;
+}
+.container{
+    background-image: url(https://m.gjcdn.net/fireside-post-image/900/20362567-gdyfejcj-v4.webp);
+    background-size:  cover;
+    background-position: center;
+    border-radius: 10px;
+}
+.btn{
+    background-color: #A31D1D;
+    color: #fff;
+    border-radius: 10px;
+}
+.btn:hover{
+    background-color: #EB5B00;
+    color: #fff;
+}
