@@ -28,7 +28,7 @@ function submitForm() {
         <div class="mt-4">
             <div class="input-group mb-3">
                 <input type="text" id="tweetInput" class="form-control" placeholder="What's on your mind?">
-                <button class="btn btn-primary" onclick="postTweet()">Post Tweet</button>
+                <button class="btn btn-primary" onclick="postTweet()">Post</button>
             </div>
             <div id="tweetsContainer" style="max-height: 300px; overflow-y: auto;">
                 <div class="tweet p-2 border mb-2">
