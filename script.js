@@ -5,7 +5,7 @@ function submitForm() {
     const quote = document.getElementById('quote').value;
     const output = document.getElementById('output');
     output.innerHTML = `
-         <div class="container">
+         <div class="container" style="color: white;">
             <div class="row">
                 <div class="col"><b>Profile Information</b></div>
             </div>
@@ -25,7 +25,7 @@ function submitForm() {
             </div>
         </div>
         
-        <div class="mt-4">
+        <div class="mt-4 ">
             <div class="input-group mb-3">
                 <input type="text" id="tweetInput" class="form-control" placeholder="What's on your mind?">
                 <button class="btn btn-primary" onclick="postTweet()">Post</button>
@@ -34,14 +34,29 @@ function submitForm() {
                 <div class="tweet p-2 border mb-2">
                     <p>bisan ang Atheist mapapa "Oh my God" jud sa mga happenings aris Pinas</p>
                     <button class="btn btn-sm btn-outline-danger" onclick="likeTweet(this)">❤️ 0</button>
+                    <div class="input-group mt-2">
+                        <input type="text" class="form-control commentInput" placeholder="Add a comment">
+                        <button class="btn btn-sm btn-outline-primary" onclick="postComment(this)">Comment</button>
+                    </div>
+                    <div class="commentsContainer mt-2"></div>
                 </div>
                 <div class="tweet p-2 border mb-2">
                     <p>Mao diay wala nay "Honesty is the best policy" sa mga rooms sa college kay 'di na naman madutlan ug konsensya</p>
                     <button class="btn btn-sm btn-outline-danger" onclick="likeTweet(this)">❤️ 0</button>
+                    <div class="input-group mt-2">
+                        <input type="text" class="form-control commentInput" placeholder="Add a comment">
+                        <button class="btn btn-sm btn-outline-primary" onclick="postComment(this)">Comment</button>
+                    </div>
+                    <div class="commentsContainer mt-2"></div>
                 </div>
                 <div class="tweet p-2 border mb-2">
                     <p>WELCOME TO YLIGANDA, SUB-SAHARA, MINDANAO!</p>
                     <button class="btn btn-sm btn-outline-danger" onclick="likeTweet(this)">❤️ 0</button>
+                    <div class="input-group mt-2">
+                        <input type="text" class="form-control commentInput" placeholder="Add a comment">
+                        <button class="btn btn-sm btn-outline-primary" onclick="postComment(this)">Comment</button>
+                    </div>
+                    <div class="commentsContainer mt-2"></div>
                 </div>
             </div>
         </div>
@@ -55,6 +70,11 @@ function submitForm() {
             tweetDiv.innerHTML = `
                 <p>${tweetInput.value}</p>
                 <button class="btn btn-sm btn-outline-danger" onclick="likeTweet(this)">❤️ 0</button>
+                <div class="input-group mt-2">
+                    <input type="text" class="form-control commentInput" placeholder="Add a comment">
+                    <button class="btn btn-sm btn-outline-primary" onclick="postComment(this)">Comment</button>
+                </div>
+                <div class="commentsContainer mt-2"></div>
             `;
             tweetsContainer.insertBefore(tweetDiv, tweetsContainer.firstChild);
             tweetInput.value = '';
@@ -64,6 +84,18 @@ function submitForm() {
     window.likeTweet = function(button) {
         const currentLikes = parseInt(button.textContent.split(' ')[1]);
         button.textContent = `❤️ ${currentLikes + 1}`;
+    }
+
+    window.postComment = function(button) {
+        const commentInput = button.previousElementSibling;
+        const commentsContainer = button.parentElement.nextElementSibling;
+        if (commentInput.value.trim() !== '') {
+            const commentDiv = document.createElement('div');
+            commentDiv.className = 'comment p-2 border mb-2';
+            commentDiv.innerHTML = `<p>${commentInput.value}</p>`;
+            commentsContainer.appendChild(commentDiv);
+            commentInput.value = '';
+        }
     }
 }
 
