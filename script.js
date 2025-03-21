@@ -6,7 +6,7 @@ function submitForm() {
     const quote = document.getElementById('quote').value;
     const output = document.getElementById('output');
     output.innerHTML = `
-         <div class="container" style="color: white;">
+         <div class="container" style="color: black;">
             <div class="row">
                 <div class="col"><b>Profile Information</b></div>
             </div>
@@ -111,9 +111,18 @@ document.getElementById('imageInput').addEventListener('change', function(e) {
     }
 });
 
-window.onload = function() {
-    var audio = document.getElementById("backgroundMusic");
-    audio.play().catch(function(error) {
-        console.log("Autoplay was blocked: ", error);
-    });
-};
+
+//music code
+
+window.addEventListener('DOMContentLoaded', () => {
+    const backgroundMusic = document.getElementById('backgroundMusic');
+    
+    const playMusic = () => {
+        backgroundMusic.play().catch(() => {
+            console.log("Autoplay is blocked by the browser. Interact with the page to start the audio.");
+        });
+    }
+    document.addEventListener('click', playMusic);
+    document.addEventListener('keypress', playMusic);
+    playMusic();
+});

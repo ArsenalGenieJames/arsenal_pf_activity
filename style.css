@@ -1,14 +1,14 @@
 body{
     /* background-image: url(TORRE.jpg); */
-    background-image: url(./sky\ love\ GIF.gif);
+    /* background-image: url(./sky\ love\ GIF.gif); */
     background-size:  cover;
     background-position: center;
-    color: #ffffff;
+    color: #000000;
 }
 .container{
     /* background-image: url(cardo); */
     /* color: #ffffff; */
-    background-color: #0000003f;
+    /* background-color: #0000003f; */
     background-size:  cover;
     background-position: center;
     border-radius: 10px;
