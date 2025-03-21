@@ -1,3 +1,4 @@
+
 function submitForm() {
     const name = document.getElementById('name').value;
     const birthday = document.getElementById('birthday').value;
@@ -109,3 +110,10 @@ document.getElementById('imageInput').addEventListener('change', function(e) {
         reader.readAsDataURL(file);
     }
 });
+
+window.onload = function() {
+    var audio = document.getElementById("backgroundMusic");
+    audio.play().catch(function(error) {
+        console.log("Autoplay was blocked: ", error);
+    });
+};
